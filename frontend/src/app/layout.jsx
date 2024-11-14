@@ -11,7 +11,7 @@ import {
   UserButton
 } from '@clerk/nextjs'
 
-import { ExpenseProvider } from "./context/ExpenseContext";
+import { ExpenseProvider } from "@/context/ExpenseContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
