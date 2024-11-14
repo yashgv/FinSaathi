@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { AlertCircle, PieChart, Plus, Ban, Trash2 } from 'lucide-react';
-import { useExpense } from '@/app/context/ExpenseContext';
+import { useExpense } from '@/context/ExpenseContext';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   BarChart, Bar, PieChart as RePieChart, Pie, Cell, Legend
