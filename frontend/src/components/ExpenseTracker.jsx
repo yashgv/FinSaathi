@@ -11,19 +11,19 @@ const ExpenseTracker = () => {
   const [error, setError] = useState('');
   const [report, setReport] = useState(null);
   const [formData, setFormData] = useState({
-    income: '100000',
+    income: '',
     expenses: {
-      Rent: '10000',
-      Groceries: '20000',
-      Utilities: '2000',
-      Transport: '2000',
-      Healthcare: '5000',
-      Entertainment: '3000',
-      Education: '6000',
-      Others: '3000'
+      Rent: '',
+      Groceries: '',
+      Utilities: '',
+      Transport: '',
+      Healthcare: '',
+      Entertainment: '',
+      Education: '',
+      Others: ''
     },
-    savings: '10000',
-    goals: ['15000']
+    savings: '',
+    goals: ['']
   });
 
   const handleExpenseChange = (category, value) => {
