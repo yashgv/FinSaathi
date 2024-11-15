@@ -117,16 +117,33 @@ const Dashboard = () => {
 
   const monthlyTrends = useMemo(() => {
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const monthlyTotals = new Map();
     const today = new Date();
-    return Array.from({ length: 6 }, (_, i) => {
-      const d = new Date();
-      d.setMonth(today.getMonth() - i);
-      return {
-        month: monthNames[d.getMonth()],
-        amount: expenses.length ? Math.floor(Math.random() * 5000) + 10000 : 0
-      };
-    }).reverse();
-  }, [expenses.length]);
+    const sixMonthsAgo = new Date(today.getFullYear(), today.getMonth() - 5, 1);
+
+    // Initialize last 6 months with zero values
+    for (let i = 0; i < 6; i++) {
+      const d = new Date(today.getFullYear(), today.getMonth() - i, 1);
+      const monthKey = `${monthNames[d.getMonth()]} ${d.getFullYear()}`;
+      monthlyTotals.set(monthKey, 0);
+    }
+
+    // Sum expenses by month
+    expenses.forEach(expense => {
+      const expenseDate = new Date(expense.date);
+      if (expenseDate >= sixMonthsAgo) {
+        const monthKey = `${monthNames[expenseDate.getMonth()]} ${expenseDate.getFullYear()}`;
+        if (monthlyTotals.has(monthKey)) {
+          monthlyTotals.set(monthKey, monthlyTotals.get(monthKey) + expense.amount);
+        }
+      }
+    });
+
+    // Convert to array and sort chronologically
+    return Array.from(monthlyTotals.entries())
+      .map(([month, amount]) => ({ month, amount }))
+      .reverse();
+  }, [expenses]);
 
   const weeklyData = useMemo(() => 
     Object.entries(stats.dailyTotals || {}).map(([day, amount]) => ({

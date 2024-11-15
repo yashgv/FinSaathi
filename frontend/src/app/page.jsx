@@ -103,7 +103,7 @@ const HomePage = () => {
             Platform for the Expense Tracking and Government Scheme advisor along with AI Chatbot.
             </p>
             <a
-              href="/factchecker"
+              href="/dashboard"
               className="inline-flex items-center px-6 py-3 mt-4 rounded-full text-lg font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 ease-in-out hover:scale-105"
             >
               Get Started for Free <ArrowRight className="ml-2" />
