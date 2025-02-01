@@ -40,7 +40,7 @@ class FinSaathiAI:
     def get_response(self, user_input):
         try:
             response = self.client.chat.completions.create(
-                model="llama-3.2-90b-text-preview",
+                model="llama3-70b-8192",
                 messages=[
                     {
                         "role": "system",

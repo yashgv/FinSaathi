@@ -23,15 +23,9 @@ import finsaathiLogo from "@/assets/finsaathi-logo.png";
 
 const sidebarLinks = [
   {
-    title: "Overview",
-    href: "/dashboard",
+    title: "Analysis",
+    href: "/analysis",
     icon: LayoutDashboard,
-    color: "text-blue-500"
-  },
-  {
-    title: "Govt. Scheme Advisor",
-    href: "/dashboard/govtSchemeAdvisor",
-    icon: PiggyBank,
     color: "text-blue-500"
   },
   {
@@ -41,9 +35,21 @@ const sidebarLinks = [
     color: "text-blue-500"
   },
   {
+    title: "Govt. Scheme Advisor",
+    href: "/dashboard/govtSchemeAdvisor",
+    icon: PiggyBank,
+    color: "text-blue-500"
+  },
+  {
     title: "Reports",
     href: "/dashboard/reports",
     icon: ArrowUpNarrowWide,
+    color: "text-blue-500"
+  },
+  {
+    title: "Overview",
+    href: "/dashboard",
+    icon: LayoutDashboard,
     color: "text-blue-500"
   },
   {
