@@ -120,21 +120,64 @@ const HomePage = () => {
             </p>
           </div>
         </section>
-        <section className="w-full bg-primary text-white py-16 mt-16">
+        <section className="w-full bg-primary text-white py-20 mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold">Over 50% of Indians</h2>
-                <p className="text-xl">
-                  remain unaware of government schemes, blocking access to essential support and resources. Increased awareness is crucial for broader benefit reach.
+            {/* Main Content */}
+            {/* <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+              <div className="space-y-6">
+                <h2 className="text-4xl font-bold leading-tight">
+                  Over 50% of Indians Lack Access
+                </h2>
+                <p className="text-xl leading-relaxed">
+                  Despite numerous beneficial government schemes, more than half of India's population remains unaware of available support and resources. Bridging this awareness gap is essential for ensuring these programs reach those who need them most.
                 </p>
+                <button className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+                  Learn More
+                </button>
               </div>
               <div className="flex justify-center">
                 <Image 
                   src={teamIllustration}
                   alt="Government schemes illustration" 
-                  className="rounded-lg shadow-lg"
+                  className="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-300"
+                  width={500}
+                  height={400}
+                  priority
                 />
+              </div>
+            </div> */}
+
+            {/* Video Section */}
+            <div className="">
+              <h3 className="text-2xl font-bold text-center mb-10">Watch How We're Making a Difference</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Video 1 */}
+                <div className="relative overflow-hidden rounded-xl shadow-xl">
+                  <div className="aspect-video">
+                    <iframe
+                      className="absolute w-full h-full"
+                      src="https://youtu.be/8zWQ9aXmeaY?si=Nf2031nz7xfd0seT"
+                      title="Video 1"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+                
+                {/* Video 2 */}
+                <div className="relative overflow-hidden rounded-xl shadow-xl">
+                  <div className="aspect-video">
+                    <iframe
+                      className="absolute w-full h-full"
+                      src="https://youtu.be/8zWQ9aXmeaY?si=Nf2031nz7xfd0seT"
+                      title="Video 2"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
