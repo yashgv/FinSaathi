@@ -1,63 +1,64 @@
-'use client'
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 import { UserButton } from "@clerk/nextjs";
-import { 
-  LayoutDashboard, 
-  PiggyBank, 
-  Receipt, 
-  Goal, 
-  Settings, 
+import {
+  LayoutDashboard,
+  PiggyBank,
+  Receipt,
+  Goal,
+  Settings,
   CreditCard,
   TrendingUp,
   Bot,
   Wallet,
   ArrowUpNarrowWide,
   Menu,
-  X
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from '@/components/mode-toggle';
-import Image from 'next/image';
+import { ModeToggle } from "@/components/mode-toggle";
+import Image from "next/image";
 import finsaathiLogo from "@/assets/finsaathi-logo.png";
+import StockTickerDashboard from "@/components/StockTickerDashboard";
 
 const sidebarLinks = [
   {
     title: "Analysis",
     href: "/analysis",
     icon: LayoutDashboard,
-    color: "text-blue-500"
+    color: "text-blue-500",
   },
   {
     title: "FinBuddy",
     href: "/dashboard/finBuddy",
     icon: Bot,
-    color: "text-blue-500"
+    color: "text-blue-500",
   },
   {
     title: "Govt. Scheme Advisor",
     href: "/dashboard/govtSchemeAdvisor",
     icon: PiggyBank,
-    color: "text-blue-500"
+    color: "text-blue-500",
   },
   {
     title: "Reports",
     href: "/dashboard/reports",
     icon: ArrowUpNarrowWide,
-    color: "text-blue-500"
+    color: "text-blue-500",
   },
   {
     title: "Overview",
     href: "/dashboard",
     icon: LayoutDashboard,
-    color: "text-blue-500"
+    color: "text-blue-500",
   },
   {
     title: "Settings",
     href: "/dashboard/settings",
     icon: Settings,
-    color: "text-gray-500"
-  }
+    color: "text-gray-500",
+  },
 ];
 
 export default function DashboardLayout({ children }) {
@@ -87,29 +88,31 @@ export default function DashboardLayout({ children }) {
               </div>
             </a>
           </div>
-          
+
           <nav className="flex-1 px-4 pb-4">
             <div className="space-y-4">
               {sidebarLinks.map((link) => (
-                <Link 
+                <Link
                   key={link.href}
                   href={link.href}
                   className="flex items-center gap-3 px-4 py-2 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors group"
                 >
-                  <link.icon className={`h-5 w-5 ${link.color} group-hover:scale-110 transition-transform`} />
+                  <link.icon
+                    className={`h-5 w-5 ${link.color} group-hover:scale-110 transition-transform`}
+                  />
                   <span className="text-sm font-medium">{link.title}</span>
                 </Link>
               ))}
             </div>
           </nav>
-          
+
           <div className="p-4 border-t border-gray-200">
             <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-gray-50">
               <UserButton
                 appearance={{
                   elements: {
-                    avatarBox: "h-8 w-8"
-                  }
+                    avatarBox: "h-8 w-8",
+                  },
                 }}
               />
               <div className="flex-1 min-w-0">
@@ -172,13 +175,16 @@ export default function DashboardLayout({ children }) {
                           onClick={toggleMobileMenu}
                           className="flex items-center gap-3 px-4 py-2 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors group"
                         >
-                          <link.icon className={`h-5 w-5 ${link.color} group-hover:scale-110 transition-transform`} />
-                          <span className="text-sm font-medium">{link.title}</span>
+                          <link.icon
+                            className={`h-5 w-5 ${link.color} group-hover:scale-110 transition-transform`}
+                          />
+                          <span className="text-sm font-medium">
+                            {link.title}
+                          </span>
                         </Link>
                       ))}
                     </div>
                   </nav>
-                 
                 </div>
               </div>
             </div>
@@ -186,6 +192,7 @@ export default function DashboardLayout({ children }) {
 
           {/* Main Content Area */}
           <main className="flex-1 overflow-auto">
+            <StockTickerDashboard />
             {children}
           </main>
         </div>
